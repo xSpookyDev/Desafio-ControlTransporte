@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+<header>
+    <div th:replace="~{nav :: nav}"></div>
+</header>
+<section class="d-flex align-items-center justify-content-center min-vh-100 bg-dark">
+    <div class="container d-flex flex-column flex-lg-row justify-content-center align-items-center p-4 p-lg-5">
+        <div class="d-flex align-items-center justify-content-center mb-4 mb-lg-0 h-100">
+            <img src="/img/Business_SVG.svg" alt="Business SVG" class="img-fluid" style="max-height: 100%;">
+        </div>
+        <div class="text-center text-lg-start">
+            <h1 class="display-4 fw-bold">Bienvenidos al sistema de
+                <span class="text-primary">reclamos</span>
+            </h1>
+            <p class="mt-4 mb-4 fs-5">Dictum aliquam porta in condimentum ac integer
+                <br class="d-none d-lg-inline">turpis pulvinar, est scelerisque ligula sem
+            </p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start">
+                <a href="#" th:href="@{/home/register}" class="btn btn-primary btn-lg me-sm-2">Registrar usuario <i class="fa-solid fa-user-plus"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div th:replace="~{footer :: footer}"></div>
+</footer>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+<!-- Font Awesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"></script>
+</body>
+</html>

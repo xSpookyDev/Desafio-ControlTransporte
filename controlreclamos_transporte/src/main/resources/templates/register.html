@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de nuevo usuario</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+<header>
+    <div th:replace="~{nav :: nav}"></div>
+</header>
+<section class="d-flex align-items-center justify-content-center min-vh-100 bg-dark">
+    <form method="post" th:action="@{/home/register}" th:object="${user}" class="container bg-light p-4 rounded shadow-sm">
+        <h1 class="mb-4 text-center text-primary">Registro de usuarios</h1>
+        <fieldset>
+            <div class="mb-3">
+                <p class="font-weight-bold text-center">Ingresa los datos del usuario</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="username" class="form-label">Nombre de usuario</label>
+                    <input id="username" name="username" type="text" placeholder="Usuario1" required
+                           class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input id="password" name="password" type="text" max="4"
+                           placeholder="Ingrese la contraseña encriptada" required
+                           class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="firstName" class="form-label">Nombre</label>
+                    <input id="firstName" name="firstName" type="text" placeholder="Juan"
+                           class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label">Apellido</label>
+                    <input id="lastName" name="lastName" type="text" placeholder="Pérez"
+                           class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="rolId" class="form-label">Tipo de rol del usuario</label>
+                    <select id="rolId" name="id" class="form-select" required>
+                        <option value="" disabled selected>Seleccione un rol</option>
+                        <option th:each="role : ${roles}" th:value="${role.getId()}"
+                                th:text="${role.getName()}"></option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mt-4">
+                Enviar
+            </button>
+        </fieldset>
+    </form>
+</section>
+<div class="bg-dark" th:replace="~{footer :: footer}"></div>
+<!-- Bootstrap JS Bundle -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

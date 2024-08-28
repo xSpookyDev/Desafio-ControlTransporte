@@ -1,0 +1,1 @@
+Si hay error con los usuarios, tienes que cambiar el nombre de las tablas y columnas:,v
